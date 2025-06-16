@@ -3,10 +3,12 @@
 // Função principal
 int main() {
     // Variáveis para controle do número de casas a serem movidas
-    int casasTorre = 5;  // Torre: 5 casas para a direita
-    int casasBispo = 5;  // Bispo: 5 casas na diagonal para cima e à direita
-    int casasRainha = 8; // Rainha: 8 casas para a esquerda
-    int i;               // Contador para as estruturas de repetição
+    int casasTorre = 5;   // Torre: 5 casas para a direita
+    int casasBispo = 5;   // Bispo: 5 casas na diagonal para cima e à direita
+    int casasRainha = 8;  // Rainha: 8 casas para a esquerda
+    int casasCavaloBaixo = 2; // Cavalo: 2 casas para baixo
+    int casasCavaloEsquerda = 1; // Cavalo: 1 casa para a esquerda
+    int i, j;             // Contadores para as estruturas de repetição
 
     // Simulação do movimento da Torre (usando for)
     printf("Movimento da Torre (%d casas para a direita):\n", casasTorre);
@@ -31,6 +33,20 @@ int main() {
         printf("Esquerda\n"); // A Rainha move-se horizontalmente para a esquerda
         i++;
     } while (i <= casasRainha);
+    printf("\n"); // Linha em branco para separação
+
+    // Simulação do movimento do Cavalo (usando loops aninhados: for e while)
+    printf("Movimento do Cavalo (2 casas para baixo e 1 casa para a esquerda):\n");
+    // Loop externo (for) para as duas casas para baixo
+    for (i = 1; i <= casasCavaloBaixo; i++) {
+        printf("Baixo\n"); // Move uma casa para baixo a cada iteração
+    }
+    // Loop interno (while) para a casa para a esquerda
+    j = 1;
+    while (j <= casasCavaloEsquerda) {
+        printf("Esquerda\n"); // Move uma casa para a esquerda
+        j++;
+    }
 
     return 0;
 }
